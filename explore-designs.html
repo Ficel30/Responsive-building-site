@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="/img/logo.webp" type="image/x-icon">
+  <title>H3LL Housing - Explore</title>
+  <link rel="stylesheet" href="/css/explore-designs.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <a href="index.html" class="back-home-btn">← Back Home</a>
+
+  <header>
+        <div class="header-content" id="home" data-aos="fade-up">
+            <h2>Explore <span> Our </span> Designs</h2>
+            <div class="line"></div>
+            <h1>From Modern Houses to  <br> <span> Classic Villas – Discover </span> <br> What Inspires You</h1>
+            <div class="liner"></div>
+        </div>
+    </header>
+
+<section class="categories" data-aos="fade-up" data-aos-duration="1200">
+    <h2>Types of Houses</h2>
+    <div class="category-grid" data-aos="flip-left" data-aos-delay="100">
+      <div class="category-card">Modern Duplex</div>
+      <div class="category-card">Luxury Villas</div>
+      <div class="category-card">Bungalows</div>
+      <div class="category-card">Smart Apartments</div>
+      <div class="category-card">Commercial Buildings</div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Building & Design Gallery</h2>
+    <div class="image-grid" data-aos="zoom-in" data-aos-delay="100">
+      <img src="/img/Modern house.jpg" alt="Modern house">
+      <img src="/img/Luxury villa.jpg" alt="Luxury villa">
+      <img src="/img/Commercial building.jpg" alt="Commercial building">
+      <img src="/img/Smart apartment.jpg" alt="Smart apartment">
+      <img src="/img/Architectural drawing.jpg" alt="Architectural drawing">
+      <img src="/img/3D building concept.jpg" alt="3D building concept">
+      <img src="/img/Building plan.jpg" alt="Building plan">
+      <img src="/img/Interior design.jpg" alt="Interior design">
+    </div>
+  </section>
+
+ <section class="plans" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+    <h2>Architectural Drawings & Plans</h2>
+    <div class="plans-container" data-aos="flip-up" data-aos-delay="200">
+      <div class="plan-card">
+        <h3>2-Bedroom Bungalow</h3>
+        <p>Plan includes: Floor plan, Electrical layout, Plumbing map</p>
+        <span>$1,500</span>
+      </div>
+      <div class="plan-card">
+        <h3>Smart Duplex</h3>
+        <p>Plan includes: 3D view, Full structural drawings</p>
+        <span>$2,800</span>
+      </div>
+      <div class="plan-card">
+        <h3>Luxury Villa Plan</h3>
+        <p>Plan includes: Landscaping + Smart integration map</p>
+        <span>$5,000</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="hire-us" data-aos="slide-left" data-aos-duration="1000">
+    <h2>Hire Our Team</h2>
+    <p>Want your dream house built by professionals? We offer design, planning, and full construction services.</p>
+    <a href="#contact-form" class="btn">Hire Us Now</a>
+  </section>
+
+  <section class="features" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1200">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>✔️ Real 3D Models & Interactive Designs</li>
+      <li>✔️ Flexible Payment Options</li>
+      <li>✔️ 100% Client Satisfaction</li>
+      <li>✔️ Trusted & Licensed Builders</li>
+      <li>✔️ Fast Delivery Timeframes</li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact-form" data-aos="zoom-in-up" data-aos-duration="1000">
+    <h2>Request a Custom Plan</h2>
+    <form id="hireForm" data-aos="fade-up" data-aos-delay="100">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="text" name="title" placeholder="Message Title" required />
+      <input type="email" name="reply_to" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Describe what you need..." required></textarea>
+      <input type="hidden" name="time" id="timeInput" />
+      <button type="submit">Send Request</button>
+      <div id="successMessage">✅ Your request has been sent successfully!</div>
+  </form>
+  </section>
+
+ <footer data-aos="fade-up" data-aos-duration="1000">
+    <p>&copy; 2025 Real Estate Design Co. | All Rights Reserved</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script type="module" src="/js/explore-designs.js"></script>
+
+</body>
+</html>

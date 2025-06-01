@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/logo.webp">
     <title>H3LL Housing</title>
 
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
+
+    <div id="preloader">
+        <div class="building-loader"></div>
+    </div>
+
     
     <nav class="navbar">
-        <h1 class="logo">H3LL Housing</h1>
+        <h1 class="logo"><span>H3LL</span> HOMES</h1>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#events">About</a></li>
             <li><a href="#explore">Explore</a></li>
             <li><a href="#tours">Tours</a></li>
@@ -22,60 +29,57 @@
         </ul>
         <img src="/img/menu_btn.png" alt="Navigation menu button" class="menu-btn">
     </nav>
-
-    <header>
-        <div class="header-content">
+    
+    <header data-aos="fade-down" data-aos-duration="1200" data-aos-easing="ease-in-out">
+        <div class="header-content" id="home">
             <h2>Explore The <span> Colorful World </span> of Houses</h2>
             <div class="line"></div>
             <h1>3D <span> ARCHITECTURAL </span> DESIGNS</h1>
-            <a href="#" class="ctn">Read More</a>
+            <div class="liner"></div>
         </div>
     </header>
 
-    <section id="events" class="event">
+    <section id="events" class="events" data-aos="fade-up" data-aos-duration="1000">
         <div class="title">
             <h1>Upcoming Sales</h1>
             <div class="line"></div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col" data-aos="zoom-in" data-aos-delay="100">
                 <img src="/img/home2.jpg" alt="Modern real estate home with clean design and driveway">
                 <h4>Real Estate Houses</h4>
                 <p>Discover top-tier real estate properties built for modern living. Whether you're investing or moving in, our homes are designed to match your dreams with reality.</p>
-                <a href="#" class="ctn">Read More</a>
+                <a href="/explore-designs.html#gallery" class="ctn">Read More</a>
 
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-in" data-aos-delay="100">
                 <img src="/img/home1.jpg" alt="Open view house with scenic surroundings and wide glass windows">
                 <h4>Open View Houses</h4>
                 <p>Wake up to breathtaking views every morning. These homes offer wide-open windows, scenic landscapes, and architecture that blends with nature’s finest.</p>
-                <a href="#" class="ctn">Read More</a>
+                <a href="/explore-designs.html#gallery" class="ctn">Read More</a>
 
             </div>
         </div>
     </section>
 
-    <section id="explore" class="explore">
+    <section id="explore" class="explore" data-aos="fade-right" data-aos-duration="1200">
         <div class="explore-content">
         <h1>EXPLORE OUR DESIGNS</h1>
         <div class="line"></div>
         <p>Step into a world where creativity meets structure. Our architectural designs blend aesthetics and functionality, giving every space a unique character and bold identity.</p>
-        <a href="#" class="ctn">Read More</a>
-
+        <a href="/explore-designs.html" class="ctn">Read More</a>
         </div>
     </section>
 
-    <section id="tours" class="tours">
+    <section id="tours" class="tours" data-aos="fade-left" data-aos-delay="150">
         <div class="row">
             <div class="col content-col">
                 <h1>UPCOMING TOURS & HOUSES</h1>
                 <div class="line"></div>
                 <p>Join exclusive walkthroughs of our newest listings and experience each home's features firsthand. From open floor plans to elegant finishes, your dream house awaits discovery.</p>
-                <a href="#" class="ctn">Read More</a>
-
             </div>
             <div class="col image-col">
-                <div class="image-gallery">
+               <div class="image-gallery" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000">
                     <img src="/img/house1.jpg" alt="Luxury villa with a landscaped garden and pool">
                     <img src="/img/house4.jpg" alt="Contemporary house with geometric design and large windows">
                     <img src="/img/house3.jpg" alt="Spacious family home with a cozy front porch">
@@ -85,19 +89,46 @@
         </div>
     </section>
 
-    <section id="footer" class="footer">
+    <section class="tools" data-aos="fade-up" data-aos-duration="1000">
+       <div class="calculator">
+        <h2>Mortgage Calculator</h2>
+        <input type="number" id="loanAmount" placeholder="Loan Amount">
+        <input type="number" id="interestRate" placeholder="Interest Rate (%)">
+        <input type="number" id="loanTerm" placeholder="Loan Term (years)">
+        <button onclick="calculateMortgage()">Calculate</button>
+        <p id="monthlyPayment"></p>
+        </div>
+
+   
+    <div class="converter">
+        <h2>Currency Converter</h2>
+        <input type="number" id="amount" placeholder="Amount in NGN">
+        <select id="currency">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+        <option value="CAD">CAD</option>
+        <option value="AUD">AUD</option>
+        <option value="INR">INR</option>
+        <option value="CNY">CNY</option>
+        <option value="RUB">RUB</option>
+        <option value="ZAR">ZAR</option>
+        <!-- Add more currencies as needed -->
+        </select>
+        <button onclick="convertCurrency()">Convert</button>
+        <p id="convertedAmount"></p>
+    </div>
+
+    </section>
+
+    <section id="footer" class="footer" data-aos="fade-in" data-aos-delay="200">
         <p>KM.24 Lagos-Ibadan Expressay, Dominion University | Phone: 913-038-4083 | Email: adekunleexcel0710@gmail.com</p>
         <p>&copy; 2023 H3LL Housing. All rights reserved.</p>
     </section>
 
-    <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-menu');
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> 
+    <script src="/js/script.js"></script>
 
 </body>
 </html>

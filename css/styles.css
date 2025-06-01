@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?fmily=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 * {
     margin: 0;
@@ -36,15 +36,57 @@ span,
     justify-content: space-between;
     padding: 20px;
     color: whitesmoke;
+    z-index: 1000;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.3s ease;
 }
 
-.nav-links li {
-    margin: 0 30px;
+.nav-links li a {
+  position: relative;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.nav-links li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  background: #fc036b;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background: #fc036b;
+  color: whitesmoke;
+  box-shadow: 0 0 10px #fc036baa;
+  cursor: pointer;
+}
+
+.nav-links li a:hover::before,
+.nav-links li a:focus::before {
+  width: 60%;
+}
+
+.nav-links li a.active {
+  background: #fc036b;
+  color: whitesmoke;
+  box-shadow: 0 0 15px #fc036bcc;
 }
 
 header {
@@ -76,6 +118,14 @@ header {
     border-radius: 5px;
 }
 
+.liner {
+    width: 350px;
+    height: 9px;
+    background: #fc036b;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
 .header-content h1 {
     font-size: 7vmin;
     margin-top: 50px;
@@ -90,11 +140,13 @@ header {
 }
 
 .menu-btn {
-    position: absolute;
+    position: fixed;
     top: 30px;
     right: 30px;
-    width: 40px;
+    z-index: 1200; 
     cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
     display: none;
 }
 
@@ -114,12 +166,17 @@ section {
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .row .col {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.col.content-col h1 {
+    font-size: 7vmin;
 }
 
 .row .col img {
@@ -237,6 +294,10 @@ p {
 
 @media only screen and (max-width: 850px) {
     .menu-btn{
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: auto;
         display: block;
     }
 
@@ -252,22 +313,38 @@ p {
 
     .nav-links {
         flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        justify-content: center;
-        background: #484872 ;
-        margin-top: -900px;
-        transition: all 0.5s ease;
+        background: #484872;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        height: calc(100vh - 70px);
+        width: 250px;
+        padding-top: 50px;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        box-shadow: -4px 0 15px rgba(252, 3, 107, 0.5);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        z-index: 1100;
+    }
+
+    .nav-links.mobile-menu {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    .nav-links li a {
+        font-size: 20px;
+        padding: 10px 20px;
     }
 
     .mobile-menu {
         margin-top: 0px;
         border-bottom-right-radius: 30%;
 
-    }
-
-    .nav-links li {
-        margin: 30px auto;
     }
 
     .row {
@@ -325,13 +402,113 @@ img:hover {
 
 .ctn:hover {
     background: whitesmoke;
+    transition: background 0.3s ease, color 0.3s ease;
     color: #fc036b;
-    box-shadow: 2px 2px 5px #00000056;
+    cursor: pointer;
 }
 
 a:hover {
     color: #fc036b;
-    font-weight: 850;
-    font-size: 18px;
+    font-weight: 950;
     cursor: pointer;
+    transition: color 0.3s ease, border 0.3s ease;
+}
+
+.navbar span{
+    color: #fc036b;
+}
+
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.building-loader {
+  width: 100px;
+  height: 100px;
+  background: url('/img/preloader1.png') no-repeat center;
+  background-size: contain;
+  animation: rotateBuilding 2s linear infinite;
+}
+
+
+@keyframes rotateBuilding {
+  0% { transform: rotateY(0); }
+  100% { transform: rotateY(360deg); }
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: #f4f4f4;
+  padding: 40px 20px;
+}
+
+.tools h2 {
+  color: #484872;
+}
+
+#tools {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.calculator, .converter {
+  width: 45%;
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+
+.tools input, .tools button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.tools button {
+  background: #fc036b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header-content h1,
+  .explore-content h1,
+  .content-col h1 {
+    font-size: 6vmin;
+  }
+
+  .tools {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #tools {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calculator, .converter {
+    width: 80%;
+  }
 }
