@@ -13,9 +13,11 @@ successBox.classList.add("show");
       const successBox = document.getElementById("successMessage");
       successBox.classList.add("show");
       alert("✅ Your request has been sent successfully! We'll get back to you shortly.");
+      location.reload();
     }, (error) => {
       alert("❌ Failed to send. Please try again.");
       console.error("EmailJS Error:", error);
+      location.reload();
     });
 });
 

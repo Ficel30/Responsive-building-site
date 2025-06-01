@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: auto;
+}
+
 body {
   background: #f7f7f7;
   color: #333;
@@ -325,9 +329,17 @@ section {
   opacity: 1;
 }
 
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  background: #263238;
-  color: white;
+.footer {
+    width: 100%;
+    min-height: 100px;
+    background: #484872;
+    padding: 20px 80px;
+    margin: 0;
+    align-items: center;
+}
+
+.footer p{
+    color: whitesmoke;
+    margin: 20px auto;
+    text-align: center;
 }
