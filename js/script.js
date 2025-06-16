@@ -9,16 +9,6 @@ menuBtn.addEventListener('click', () => {
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
     preloader.style.display = "none";
-    // Clear input fields on page load
-  // Mortgage calculator
-  document.getElementById('loanAmount').value = '';
-  document.getElementById('interestRate').value = '';
-  document.getElementById('loanTerm').value = '';
-
-  // Currency converter
-  document.getElementById('amount').value = '';
-});
-
 });
 
 
