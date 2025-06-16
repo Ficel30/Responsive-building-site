@@ -20,6 +20,7 @@ ul {
 body,
 html {
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 span,
@@ -50,7 +51,7 @@ span,
 
 .nav-links li a {
   position: relative;
-  color: whitesmoke;
+  color: blue;
   font-weight: 700;
   font-size: 14px;
   padding: 6px 12px;
