@@ -9,6 +9,16 @@ menuBtn.addEventListener('click', () => {
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
     preloader.style.display = "none";
+    // Clear input fields on page load
+  // Mortgage calculator
+  document.getElementById('loanAmount').value = '';
+  document.getElementById('interestRate').value = '';
+  document.getElementById('loanTerm').value = '';
+
+  // Currency converter
+  document.getElementById('amount').value = '';
+});
+
 });
 
 
@@ -25,10 +35,6 @@ function calculateMortgage() {
     isFinite(monthly)
       ? `Monthly Payment: ₦${monthly.toFixed(2)}`
       : 'Please enter valid numbers';
-   
-    principalInput.value = '';
-  interestInput.value = '';
-  termInput.value = '';
 }
 
 async function convertCurrency() {
@@ -47,8 +53,6 @@ async function convertCurrency() {
     document.getElementById('convertedAmount').innerText =
       'Conversion failed. Please try again later.';
   }
-  
-    amountInput.value = '';
 };
 
 AOS.init({
