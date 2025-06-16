@@ -1,10 +1,14 @@
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('.nav-links');
+const menuBtn = document.getElementById('menuBtn');
+const closeBtn = document.getElementById('closeBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
 menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-menu');
+  mobileMenu.classList.add('active');
 });
 
+closeBtn.addEventListener('click', () => {
+  mobileMenu.classList.remove('active');
+});
 
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
@@ -14,34 +18,35 @@ window.addEventListener("load", function () {
 
 function calculateMortgage() {
   const principal = parseFloat(document.getElementById('loanAmount').value);
-  const annualInterest = parseFloat(document.getElementById('interestRate').value) / 100;
-  const years = parseFloat(document.getElementById('loanTerm').value);
-  const monthlyInterest = annualInterest / 12;
-  const payments = years * 12;
-  const x = Math.pow(1 + monthlyInterest, payments);
-  const monthly = (principal * x * monthlyInterest) / (x - 1);
-  document.getElementById('monthlyPayment').innerText = `Monthly Payment: $${monthly.toFixed(2)}`;
+  const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+  const months = parseInt(document.getElementById('loanTerm').value) * 12;
+
+  const monthly =
+    (principal * interestRate) /
+    (1 - Math.pow(1 + interestRate, -months));
+
+  document.getElementById('monthlyPayment').innerText =
+    isFinite(monthly)
+      ? `Monthly Payment: ₦${monthly.toFixed(2)}`
+      : 'Please enter valid numbers';
 }
 
-function convertCurrency() {
+async function convertCurrency() {
   const amount = parseFloat(document.getElementById('amount').value);
-  const currency = document.getElementById('currency').value;
-  // Example exchange rates; in a real application, fetch from an API
-  const rates = {
-  'USD': 1 / 1500,    // 1 USD ≈ 1500 NGN
-  'EUR': 1 / 1600,    // 1 EUR ≈ 1600 NGN
-  'GBP': 1 / 1850,    // 1 GBP ≈ 1850 NGN
-  'JPY': 1 / 10.2,    // 1 JPY ≈ 10.2 NGN
-  'CAD': 1 / 1100,    // 1 CAD ≈ 1100 NGN
-  'AUD': 1 / 1000,    // 1 AUD ≈ 1000 NGN
-  'INR': 1 / 18.5,    // 1 INR ≈ 18.5 NGN
-  'CNY': 1 / 205,     // 1 CNY ≈ 205 NGN
-  'RUB': 1 / 16.7,    // 1 RUB ≈ 16.7 NGN
-  'ZAR': 1 / 80       // 1 ZAR ≈ 80 NGN
-};
+  const targetCurrency = document.getElementById('currency').value;
 
-  const converted = amount * rates[currency];
-  document.getElementById('convertedAmount').innerText = `Converted Amount: ${converted.toFixed(2)} ${currency}`;
+  try {
+    const res = await fetch(`https://api.exchangerate-api.com/v4/latest/NGN`);
+    const data = await res.json();
+    const rate = data.rates[targetCurrency];
+    const result = amount * rate;
+
+    document.getElementById('convertedAmount').innerText =
+      `Converted: ${targetCurrency} ${result.toFixed(2)}`;
+  } catch (err) {
+    document.getElementById('convertedAmount').innerText =
+      'Conversion failed. Please try again later.';
+  }
 };
 
 AOS.init({
