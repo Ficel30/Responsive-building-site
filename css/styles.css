@@ -34,7 +34,7 @@ span,
     display: flex;
     width: 100%;
     justify-content: space-between;
-    background-color: #1a1a2e;
+    background-color: transparent;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     color: whitesmoke;
