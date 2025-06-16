@@ -1,14 +1,10 @@
-const menuBtn = document.getElementById('menuBtn');
-const closeBtn = document.getElementById('closeBtn');
-const mobileMenu = document.getElementById('mobileMenu');
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
 menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.add('active');
+    navLinks.classList.toggle('mobile-menu');
 });
 
-closeBtn.addEventListener('click', () => {
-  mobileMenu.classList.remove('active');
-});
 
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
