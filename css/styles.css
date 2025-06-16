@@ -28,12 +28,14 @@ span,
 }
 
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    background-color: #1a1a2e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     color: whitesmoke;
     z-index: 999;
