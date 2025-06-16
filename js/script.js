@@ -25,6 +25,7 @@ function calculateMortgage() {
     isFinite(monthly)
       ? `Monthly Payment: ₦${monthly.toFixed(2)}`
       : 'Please enter valid numbers';
+    location.reload();
 }
 
 async function convertCurrency() {
@@ -43,6 +44,7 @@ async function convertCurrency() {
     document.getElementById('convertedAmount').innerText =
       'Conversion failed. Please try again later.';
   }
+    location.reload();
 };
 
 AOS.init({
