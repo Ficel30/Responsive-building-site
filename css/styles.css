@@ -100,7 +100,6 @@ header {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-top: 100px;
 }
 
 .header-content {
