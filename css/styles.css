@@ -320,8 +320,8 @@ p {
         top: 70px;
         right: 0;
         height: calc(100vh - 70px);
-        width: 250px;
-        padding-top: 50px;
+        width: 200px;
+        padding-top: 30px;
         transform: translateX(100%);
         transition: transform 0.4s ease;
         box-shadow: -4px 0 15px rgba(252, 3, 107, 0.5);
@@ -335,12 +335,12 @@ p {
     }
 
     .nav-links li {
-        margin: 25px 0;
+        margin: 10px 0;
     }
 
     .nav-links li a {
-        font-size: 20px;
-        padding: 10px 20px;
+        font-size: 14px !important;
+        padding: 6px 12px;
     }
 
     .mobile-menu {
@@ -572,3 +572,14 @@ a:hover {
 .converter .dropdowns {
   margin-top: 10px;
 }
+
+.converter select {
+  background-color: rgba(0, 0, 0, 0.3); /* Darker background */
+  color: white;
+}
+
+.converter select option {
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
