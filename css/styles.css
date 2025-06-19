@@ -319,7 +319,7 @@ p {
         position: fixed;
         top: 70px;
         right: 0;
-        height: calc(100vh - 70px);
+        height: 70px;
         width: 200px;
         padding-top: 30px;
         transform: translateX(100%);
