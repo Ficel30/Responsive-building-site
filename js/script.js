@@ -16,16 +16,28 @@ function calculateMortgage() {
   const principal = parseFloat(document.getElementById('loanAmount').value);
   const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
   const months = parseInt(document.getElementById('loanTerm').value) * 12;
+  const output = document.getElementById('monthlyPayment');
 
-  const monthly =
-    (principal * interestRate) /
-    (1 - Math.pow(1 + interestRate, -months));
+  if (isNaN(principal) || isNaN(interestRate) || isNaN(months) || principal <= 0 || months <= 0) {
+    output.innerText = 'Please enter valid numbers';
+    return;
+  }
 
-  document.getElementById('monthlyPayment').innerText =
-    isFinite(monthly)
-      ? `Monthly Payment: ₦${monthly.toFixed(2)}`
-      : 'Please enter valid numbers';
+  const monthly = (principal * interestRate) / (1 - Math.pow(1 + interestRate, -months));
+
+  output.innerText = isFinite(monthly)
+    ? `Monthly Payment: ₦${monthly.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+    : 'Calculation error. Check your inputs.';
 }
+
+// Reset all input/output on page load
+window.addEventListener('load', () => {
+  document.getElementById('loanAmount').value = '';
+  document.getElementById('interestRate').value = '';
+  document.getElementById('loanTerm').value = '';
+  document.getElementById('monthlyPayment').innerText = '';
+});
+
 
 async function convertCurrency() {
   const amount = parseFloat(document.getElementById('amount').value);
