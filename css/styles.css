@@ -564,12 +564,11 @@ a:hover {
 /* Dropdown labels */
 .converter label {
   font-size: 0.95rem;
-  color: #ddd;
+  color: cyan;
   margin-top: 8px;
   display: block;
 }
 
 .converter .dropdowns {
   margin-top: 10px;
-    color: cyan;
 }
