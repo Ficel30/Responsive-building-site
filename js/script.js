@@ -29,21 +29,38 @@ function calculateMortgage() {
 
 async function convertCurrency() {
   const amount = parseFloat(document.getElementById('amount').value);
-  const targetCurrency = document.getElementById('currency').value;
+  const fromCurrency = document.getElementById('fromCurrency').value;
+  const toCurrency = document.getElementById('toCurrency').value;
+  const output = document.getElementById('convertedAmount');
+
+  if (isNaN(amount) || amount <= 0) {
+    output.innerText = 'Please enter a valid amount.';
+    return;
+  }
 
   try {
-    const res = await fetch(`https://api.exchangerate-api.com/v4/latest/NGN`);
+    const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
     const data = await res.json();
-    const rate = data.rates[targetCurrency];
-    const result = amount * rate;
+    const rate = data.rates[toCurrency];
+    
+    if (!rate) {
+      output.innerText = `Rate not available for ${toCurrency}`;
+      return;
+    }
 
-    document.getElementById('convertedAmount').innerText =
-      `Converted: ${targetCurrency} ${result.toFixed(2)}`;
+    const result = amount * rate;
+    output.innerText = `Converted: ${toCurrency} ${result.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   } catch (err) {
-    document.getElementById('convertedAmount').innerText =
-      'Conversion failed. Please try again later.';
+    output.innerText = 'Conversion failed. Please try again later.';
   }
-};
+}
+
+// Reset form on page load
+window.addEventListener('load', () => {
+  document.getElementById('amount').value = '';
+  document.getElementById('convertedAmount').innerText = '';
+});
+
 
 AOS.init({
   once: true,
