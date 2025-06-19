@@ -101,24 +101,46 @@
 
    
     <div class="converter">
-        <h2>Currency Converter</h2>
-        <input type="number" id="amount" placeholder="Amount in NGN">
-        <select id="currency">
-        <option value="EUR">EUR</option>
-        <option value="USD">USD</option>
-        <option value="GBP">GBP</option>
-        <option value="JPY">JPY</option>
-        <option value="CAD">CAD</option>
-        <option value="AUD">AUD</option>
-        <option value="INR">INR</option>
-        <option value="CNY">CNY</option>
-        <option value="RUB">RUB</option>
-        <option value="ZAR">ZAR</option>
-        <!-- Add more currencies as needed -->
-        </select>
-        <button onclick="convertCurrency()">Convert</button>
-        <p id="convertedAmount"></p>
-    </div>
+  <h2>Currency Converter</h2>
+  
+  <input type="number" id="amount" placeholder="Amount" />
+
+  <div class="dropdowns">
+    <label>From:</label>
+    <select id="fromCurrency">
+      <option value="NGN" selected>NGN</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="CAD">CAD</option>
+      <option value="AUD">AUD</option>
+      <option value="INR">INR</option>
+      <option value="CNY">CNY</option>
+      <option value="RUB">RUB</option>
+      <option value="ZAR">ZAR</option>
+    </select>
+
+    <label>To:</label>
+    <select id="toCurrency">
+      <option value="USD" selected>USD</option>
+      <option value="NGN">NGN</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="CAD">CAD</option>
+      <option value="AUD">AUD</option>
+      <option value="INR">INR</option>
+      <option value="CNY">CNY</option>
+      <option value="RUB">RUB</option>
+      <option value="ZAR">ZAR</option>
+    </select>
+  </div>
+
+  <button onclick="convertCurrency()">Convert</button>
+  <p id="convertedAmount"></p>
+</div>
+
 
     </section>
 
