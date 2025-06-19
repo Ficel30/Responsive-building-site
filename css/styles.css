@@ -445,24 +445,6 @@ a:hover {
   100% { transform: rotateY(360deg); }
 }
 
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background: #f4f4f4;
-  padding: 40px 20px;
-}
-
-.tools h2 {
-  color: #484872;
-}
-
-#tools {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  background-color: #f4f4f4;
-}
 
 @media (max-width: 600px) {
   .header-content h1,
@@ -483,57 +465,94 @@ a:hover {
     align-items: center;
   }
 
+.calculator,
 .converter {
-  padding: 1rem;
-  max-width: 400px;
-  margin: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #ccc;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  max-width: 450px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Poppins', sans-serif;
 }
 
+.calculator h2,
 .converter h2 {
   text-align: center;
-}
-
-.converter input,
-.converter select,
-.converter button {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin: 10px 0;
-}
-
-#convertedAmount {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  color: green;
-}
-
-.calculator {
-  max-width: 400px;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #ccc;
-}
-
-.calculator h2 {
-  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: cyan;
 }
 
 .calculator input,
-.calculator button {
-  display: block;
+.converter input,
+.converter select,
+.calculator button,
+.converter button {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
 }
 
-#monthlyPayment {
-  font-size: 1.2rem;
+.calculator input,
+.converter input,
+.converter select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.calculator input::placeholder,
+.converter input::placeholder {
+  color: #ccc;
+}
+
+.calculator button,
+.converter button {
+  background-color: #fc036b;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calculator button:hover,
+.converter button:hover {
+  background-color: #ff4b91;
+  transform: scale(1.03);
+}
+
+#monthlyPayment,
+#convertedAmount {
   text-align: center;
-  color: green;
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: lightgreen;
+}
+
+/* Layout spacing */
+.tools {
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Dropdown label style */
+.converter label {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 8px;
+  display: block;
+}
+
+.converter .dropdowns {
+  margin-top: 10px;
 }
