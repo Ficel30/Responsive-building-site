@@ -466,13 +466,24 @@ a:hover {
   }
 }
 
+/* Tools section background */
+.tools {
+  background-color: #d3d3d3; /* light gray background */
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  border-top: 3px solid #fc036b;
+}
+
+/* Calculator and Converter container styles */
 .calculator,
 .converter {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: #2f2f2f; /* deep ash background */
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   margin: 20px auto;
   max-width: 450px;
   color: #ffffff;
@@ -480,14 +491,17 @@ a:hover {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Titles */
 .calculator h2,
 .converter h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 2rem;
   color: #fc036b;
+  letter-spacing: 1px;
 }
 
+/* Input + Select + Button common styles */
 .calculator input,
 .converter input,
 .converter select,
@@ -502,20 +516,22 @@ a:hover {
   font-family: inherit;
 }
 
+/* Input fields and dropdowns */
 .calculator input,
 .converter input,
 .converter select {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.07);
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid #fc036b;
 }
 
 .calculator input::placeholder,
 .converter input::placeholder {
   color: cyan;
-    font-weight: bold;
+  font-weight: bold;
 }
 
+/* Buttons */
 .calculator button,
 .converter button {
   background-color: #fc036b;
@@ -531,27 +547,24 @@ a:hover {
   transform: scale(1.03);
 }
 
+/* Output text styles */
 #monthlyPayment,
 #convertedAmount {
   text-align: center;
-  margin-top: 15px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: green;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #00ff7f; /* light green */
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
 }
 
-/* Layout spacing */
-.tools {
-    display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-}
-
-/* Dropdown label style */
+/* Dropdown labels */
 .converter label {
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 0.95rem;
+  color: #ddd;
   margin-top: 8px;
   display: block;
 }
