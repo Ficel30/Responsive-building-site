@@ -464,21 +464,6 @@ a:hover {
   background-color: #f4f4f4;
 }
 
-.tools input, .tools button {
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
-  max-width: 300px;
-}
-
-.tools button {
-  background: #fc036b;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 @media (max-width: 600px) {
   .header-content h1,
   .explore-content h1,
