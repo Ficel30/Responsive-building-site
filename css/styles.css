@@ -464,7 +464,7 @@ a:hover {
   background-color: #f4f4f4;
 }
 
-.calculator, .converter {
+.calculator {
   width: 45%;
 }
 
@@ -510,7 +510,36 @@ input, select, button {
     align-items: center;
   }
 
-  .calculator, .converter {
+  .calculator {
     width: 80%;
   }
 }
+
+.converter {
+  padding: 1rem;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.converter h2 {
+  text-align: center;
+}
+
+.converter input,
+.converter select,
+.converter button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+#convertedAmount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: green;
+}
+
