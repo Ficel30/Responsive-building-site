@@ -1,6 +1,5 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Responsive–First-yellowgreen?style=flat-square" alt="Responsive">
-  <img src="https://img.shields.io/badge/HTML5-CSS3-JavaScript-blue?style=flat-square" alt="Tech Stack">
   <img src="https://img.shields.io/github/license/Ficel30/Responsive-building-site?style=flat-square" alt="License">
 </p>
 
@@ -23,7 +22,7 @@ A sleek, multi-device responsive construction-themed website template built with
 ## 🛎️ Live Demo
 
 Explore the template in action:  
-**https://Ficel30.github.io/Responsive-building-site/**
+**h3ll-housing.vercel.app /**
 
 ---
 
