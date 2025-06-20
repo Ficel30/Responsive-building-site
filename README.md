@@ -22,7 +22,7 @@ A sleek, multi-device responsive construction-themed website template built with
 ## 🛎️ Live Demo
 
 Explore the template in action:  
-**h3ll-housing.vercel.app /**
+**[h3ll-housing.vercel.app /](https://h3ll-housing.vercel.app/)**
 
 ---
 
